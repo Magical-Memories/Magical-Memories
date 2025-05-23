@@ -68,19 +68,18 @@ img {
 
 /* Hero Section */
 #hero {
-    background-image: url(Images/Background\ Image.jpg);
+    background-image: url('Images/Background Image.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    height: 100dvh; /* 💡 This fixes mobile height issues */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    position: relative;
-    padding: 2rem;
     text-align: center;
+    padding: 2rem;
+    position: relative;
+    color: white;
 }
 
 .heading {
