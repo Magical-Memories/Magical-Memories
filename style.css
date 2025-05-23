@@ -1,26 +1,49 @@
+/* Base Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
     background-color: #FFF2BE;
+    -webkit-appearance: none; /* Prevent iOS from adjusting colors */
+    appearance: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* Remove tap highlight */
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Dropdown Menu */
 .dropdown {
     position: absolute;
     top: 20px;
     left: 20px;
     z-index: 999;
-  }
-  
-  .dropbtn {
+}
+
+.dropbtn {
     background-color: #FFF2BE;
-    color: rgb(0, 0, 0);
+    color: black;
     padding: 10px 16px;
     font-size: 16px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-  }
-  
-  .dropdown-content {
+}
+
+.dropdown-content {
     display: none;
     position: absolute;
     top: 40px;
@@ -30,79 +53,76 @@ body {
     box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
     z-index: 1000;
     border-radius: 6px;
-  }
-  
-  .dropdown-content a {
+}
+
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+}
 
-  }
-  
-  .dropdown-content a:hover {
+.dropdown-content a:hover {
     background-color: #f1f1f1;
-  }
+}
 
-  
+/* Hero Section */
 #hero {
-   background-image: url(Images/Background\ Image\ .jpg);
+    background-image: url('Images/Background Image.jpg');
     background-size: cover;
     background-position: center;
-    height: 200vh;
+    background-repeat: no-repeat;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #f9f9f9;
-    background-color: rgba(0, 0, 0, 0.5); /* Add background overlay for better text contrast */
-}
-
-.heading {
-    font-size: 48px;
-    padding-left: 100px;
-    margin-top: 0;
-
-}
-
-.subheading {
-    font-size: 25px;
-    padding-left: 100px;
-    margin-top: 2px;
-    
-}
-
-#about {
-    padding: 20px;
-    text-align: left;
-    background-color: #FFF2BE;
-    margin-bottom: 0;
-}
-
-#about h1 {
-    font-size: 30px;
-    margin-left:0px;
+    color: white;
+    position: relative;
+    padding: 2rem;
     text-align: center;
 }
 
+.heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.subheading {
+    font-size: 1.2rem;
+}
+
+/* About Section */
+#about {
+    padding: 2rem;
+    background-color: #FFF2BE;
+    text-align: left;
+}
+
+#about h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 #about p {
-    font-size: 18px;
-    margin-left: 20px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
     line-height: 1.5;
 }
 
 .bullet-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
     list-style: none;
     padding: 0;
-    margin: 20px;
+    margin-top: 1rem;
 }
 
 .bullet-list li {
     background-color: #f7f7f7;
-    padding: 10px;
+    padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -116,36 +136,27 @@ body {
 
 .infologo {
     text-align: center;
-    margin: 20px 0;
+    margin-top: 2rem;
 }
 
+/* Gallery Section */
 #gallery {
-
-background-color:#FFF2BE ;
-margin-top: 0;
-margin-bottom: 0;
-padding: 0;
-border: none;   
+    background-color: #FFF2BE;
+    padding: 2rem;
 }
-
 
 #gallery h1 {
-    text-align: center;  
-    font-size: 30px;
-    margin-left:0px; 
-    
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 
 .slider {
     position: relative;
-    max-width: 80%;
-    margin: 0 auto;
     overflow: hidden;
+    width: 100%;
+    margin: 0 auto 2rem;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
 }
 
 .slides {
@@ -155,11 +166,9 @@ border: none;
 }
 
 .slides img {
-        width: 33.33%;
-        max-width: none;
-        border-radius: 10px;
-        margin: 0;
-        
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 10px;
 }
 
 .portfolio-prev,
@@ -177,69 +186,24 @@ border: none;
     z-index: 10;
 }
 
-/* Positioning of the previous and next buttons for portfolio slider */
-.portfolio-prev { left: 10px; }
-.portfolio-next { right: 10px; }
-
-/* Hover effects for portfolio buttons */
 .portfolio-prev:hover,
 .portfolio-next:hover {
     background-color: rgba(0,0,0,0.8);
 }
 
+.portfolio-prev { left: 10px; }
+.portfolio-next { right: 10px; }
 
-#contact {
-    padding: 2em;
-    margin-left: 0;
+/* Reviews Section */
+#reviews {
     background-color: #FFF2BE;
-}
-
-#contact h1 {
-    font-size: 30px;
-  
-}
-
-#contact p {
-
-font-size: 18px;   
-}
-.quote-form {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .quote-form input,
-  .quote-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .quote-form button {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .quote-form button:hover {
-    background-color: #555;
-  }
-
-  #reviews {
-    background-color: #FFF2BE;
-    padding: 40px 20px;
+    padding: 2rem;
     text-align: center;
 }
 
 #reviews h1 {
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 
 .reviews-slider {
@@ -248,30 +212,29 @@ font-size: 18px;
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-  }
-  
-  .review {
+}
+
+.review {
     display: none;
     background-color: #ffffff;
-    padding: 20px;
+    padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .review.active {
+}
+
+.review.active {
     display: block;
-  }
+}
 
 .review p {
-    font-size: 18px;
+    font-size: 1rem;
     font-style: italic;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 .review span {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 0.9rem;
     color: #555;
 }
 
@@ -290,71 +253,102 @@ button.next {
     z-index: 10;
 }
 
-button.prev { left: 10px; }
-button.next { right: 10px; }
-
 button.prev:hover,
 button.next:hover {
     background-color: rgba(0,0,0,0.8);
 }
-  
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+/* Contact Section */
+#contact {
+    padding: 2rem;
+    background-color: #FFF2BE;
+}
+
+#contact h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+#contact p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.quote-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quote-form input,
+.quote-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.quote-form button {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quote-form button:hover {
+    background-color: #555;
+}
+
+/* Footer */
 footer {
     background-color: #fcfcfc;
     color: #0c0c0c;
     text-align: center;
-    padding: 0.5em 0;
-    position: relative;
-    width: 100%;
+    padding: 1rem 0;
 }
 
 footer p {
-font-size: 12px;  
+    font-size: 12px;
 }
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
-    .gallery-container {
-        grid-template-columns: repeat(1, 1fr);
+    .heading {
+        font-size: 2rem;
+    }
+
+    .subheading {
+        font-size: 1rem;
+    }
+
+    #about h1,
+    #gallery h1,
+    #contact h1 {
+        font-size: 1.5rem;
+    }
+
+    #about p,
+    #contact p {
+        font-size: 0.95rem;
     }
 
     .bullet-list {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
     }
 
-    .heading {
-        font-size: 36px; /* Smaller heading for mobile */
+    .portfolio-prev,
+    .portfolio-next {
+        font-size: 1.2rem;
+        padding: 8px;
     }
 
-    .subheading {
-        font-size: 18px; /* Slightly smaller subheading */
-    }
-
-    #about h1, #gallery h1, #contact h1 {
-        font-size: 24px; /* Adjust heading sizes */
-    }
-
-    #about p, #contact p {
-        font-size: 16px; /* Adjust paragraph size */
-    }
-
-    .logo img {
-        width: 200px;
-    }
-
-    #hero {
-        height: 60vh;
-        background-position: center top;
-    }
-
-    .heading,
-    .subheading {
-        padding-left: 20px;
-        text-align: center;
-    }
-
-    .slides img {
-
-      max-width: 100%;
-      margin: 0 5px;  
+    .review {
+        padding: 1rem;
     }
 }
