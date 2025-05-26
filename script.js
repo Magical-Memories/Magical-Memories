@@ -35,19 +35,16 @@ function moveLandscape(n) {
 function moveSlider(n, type) {
   const slider = document.querySelector(`.${type}-slider .slides`);
   const slides = slider.querySelectorAll("img");
-  const slidesPerGroup = 3;
-  const totalGroups = Math.ceil(slides.length / slidesPerGroup);
 
-  // Move index by group instead of individual slide
   slideIndexes[type] += n;
 
   if (slideIndexes[type] < 0) {
-    slideIndexes[type] = totalGroups - 1;
-  } else if (slideIndexes[type] >= totalGroups) {
+    slideIndexes[type] = slides.length - 1;
+  } else if (slideIndexes[type] >= slides.length) {
     slideIndexes[type] = 0;
   }
 
-  const offset = -(slideIndexes[type] * 100); // Each group takes 100% width
+  const offset = -slideIndexes[type] * 100; // Each image takes 100% width
   slider.style.transform = `translateX(${offset}%)`;
 }
 
